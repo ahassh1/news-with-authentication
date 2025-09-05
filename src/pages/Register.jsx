@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router";
 
 const Register = () => {
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+  };
   return (
     <div>
       <div className="flex justify-center items-center min-h-screen">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-4">
-          <div className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
             <h1 className="font-bold text-2xl text-gray-600">
               Register your account
             </h1>
@@ -26,7 +30,10 @@ const Register = () => {
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
-              <button className="btn btn-neutral mt-6 hover:btn-secondary cursor-pointer">
+              <button
+                type="submit"
+                className="btn btn-neutral mt-6 hover:btn-secondary cursor-pointer"
+              >
                 Register
               </button>
               <p className="text-center font-semibold text-gray-600 pt-3">
@@ -36,7 +43,7 @@ const Register = () => {
                 </Link>
               </p>
             </fieldset>
-          </div>
+          </form>
         </div>
       </div>
     </div>
