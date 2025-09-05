@@ -17,15 +17,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
         setUser(user);
+        // console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        alert(errorCode, errorMessage);
       });
   };
+
   return (
     <div>
       <div className="flex justify-center items-center min-h-screen">
